@@ -72,6 +72,11 @@ project 'pe-installer-runtime-main' do |proj|
   # puppet to have the same gems as the default puppet agent install.
   ########
 
+  # Pin to older gettext gems for 2023.1
+  proj.setting :rubygem_fast_gettext_version, '1.1.2'
+  proj.setting :rubygem_gettext_version, '3.2.2'
+  proj.setting :rubygem_gettext_setup_version, '0.34'
+
   instance_eval File.read(File.join(File.dirname(__FILE__), '_shared-agent-components.rb'))
 
 
