@@ -6,6 +6,9 @@ project 'bolt-runtime' do |proj|
   proj.setting(:rubygem_net_ssh_version, '6.1.0')
   proj.setting(:augeas_version, '1.11.0')
   # TODO: Can runtime projects use these updated versions?
+  proj.setting :rubygem_fast_gettext_version, '1.1.2'
+  proj.setting :rubygem_gettext_version, '3.2.2'
+  proj.setting :rubygem_gettext_setup_version, '0.34'
   proj.setting(:rubygem_deep_merge_version, '1.2.2')
   proj.setting(:rubygem_puppet_version, '7.18.0')
 
@@ -128,7 +131,6 @@ project 'bolt-runtime' do |proj|
   proj.component 'rubygem-text'
   proj.component 'rubygem-locale'
   proj.component 'rubygem-gettext'
-  proj.component 'rubygem-prime'
   proj.component 'rubygem-fast_gettext'
   proj.component 'rubygem-scanf'
   proj.component 'rubygem-semantic_puppet'
