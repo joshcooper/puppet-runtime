@@ -161,7 +161,7 @@ if platform.name =~ /^redhatfips-/
 elsif platform.name =~ /^windowsfips-2012r2/
   proj.setting(:openssl_version, '1.0.2')
 else
-  proj.setting(:openssl_version, '1.1.1')
+  proj.setting(:openssl_version, '3.0')
 end
 
 if platform.is_windows?
