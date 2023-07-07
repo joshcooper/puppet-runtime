@@ -70,12 +70,11 @@ component 'ruby-3.2.2' do |pkg, settings, platform|
 
   if platform.is_macos?
     pkg.environment 'optflags', settings[:cflags]
-    if platform.architecture == 'arm64'
+    if platform.os_version.to_i >= 13 && platform.architecture == 'arm64'
       pkg.environment 'PATH', '$(PATH):/opt/homebrew/bin'
     else
       pkg.environment 'PATH', '$(PATH):/usr/local/bin'
     end
-    
   elsif platform.is_windows?
     pkg.environment 'optflags', settings[:cflags] + ' -O3'
     pkg.environment 'MAKE', 'make'

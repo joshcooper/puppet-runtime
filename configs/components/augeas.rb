@@ -103,7 +103,7 @@ component 'augeas' do |pkg, settings, platform|
       pkg.environment "PKG_CONFIG", "/opt/pl-build-tools/bin/pkg-config"
     end
   elsif platform.is_macos?
-    if platform.architecture == 'arm64'
+    if platform.os_version.to_i >= 13 && platform.architecture == 'arm64'
       pkg.environment 'PATH', '$(PATH):/opt/homebrew/bin'
     else
       pkg.environment 'PATH', '$(PATH):/usr/local/bin'
