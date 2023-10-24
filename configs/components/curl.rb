@@ -59,7 +59,7 @@ component 'curl' do |pkg, settings, platform|
         #{configure_options.join(" ")} \
         --enable-threaded-resolver \
         --disable-ldap \
-        --disable-ldaps \
+        --enable-ldaps \
         --with-ca-bundle=#{settings[:prefix]}/ssl/cert.pem \
         --with-ca-path=#{settings[:prefix]}/ssl/certs \
         CFLAGS='#{settings[:cflags]} #{extra_cflags.join(" ")}' \
