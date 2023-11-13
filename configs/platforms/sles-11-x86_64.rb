@@ -7,7 +7,6 @@ platform "sles-11-x86_64" do |plat|
   packages = [
     "aaa_base",
     "gcc",
-    "java-1_7_1-ibm-devel",
     "libbz2-devel",
     "make",
     "pkgconfig",
