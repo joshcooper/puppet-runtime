@@ -118,7 +118,7 @@ component 'ruby-2.7.8' do |pkg, settings, platform|
     special_flags += " --with-openssl-dir=#{settings[:prefix]} "
   elsif platform.is_solaris? && platform.architecture == "sparc"
     special_flags += " --with-baseruby=#{host_ruby} --enable-close-fds-by-recvmsg-with-peek "
-  elsif platform.name =~ /el-6/ || platform.name =~ /sles-11-x86_64/
+  elsif platform.name =~ /amazon-2-/ || platform.name =~ /el-6/ || platform.name =~ /sles-11-x86_64/
     # Since we're not cross compiling, ignore old ruby versions that happen to be in the PATH
     # and force ruby to build miniruby and use that to bootstrap the rest of the build
     special_flags += " --with-baseruby=no "
@@ -128,6 +128,7 @@ component 'ruby-2.7.8' do |pkg, settings, platform|
 
   without_dtrace = [
     'aix-7.1-ppc',
+    'amazon-2-aarch64',
     'el-7-ppc64le',
     'osx-11-arm64',
     'osx-12-arm64',
